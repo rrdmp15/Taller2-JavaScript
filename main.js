@@ -1,18 +1,23 @@
-let nota1 = parseInt(prompt("Ingrese la nota 1"));
-let nota2 = parseInt(prompt("Ingrese la nota 2"));
-let nota3 = parseInt(prompt("Ingrese la nota 3"));
+function repetir(){
+    let numero = parseInt(prompt("Escriba un numero:"))
 
-let promedio = ((nota1 + nota2 + nota3)/3);
+    if(numero % 2 == 0 && numero > 10){
+        alert("Es par y mayor a 10");
+    } else if (numero % 2 == 0 && numero < 10){
+        alert("Es par y menor a 10");
+    } else if (numero % 2 == 0 && numero == 10){
+        alert("Es par");
+    }else if ( numero > 10){
+        alert("Es impar y mayor a 10");
+    }else if ( numero < 10){
+        alert("Es Impar y menor a 10");
+    }else if ( numero == 10){
+        alert("Es impar");
+    }else{
+        alert("Ingresa un numero valido");
+    }
 
-if (promedio <= 3.9){
-    Swal.fire({
-        icon: 'error',
-        title: 'Estudie',
-    });
-} 
-else if (promedio > 3.9){
-    Swal.fire({
-        icon: 'success',
-        title: 'Becado',
-    });
+    repetir()
 }
+
+repetir()
