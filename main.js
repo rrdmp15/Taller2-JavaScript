@@ -1,7 +1,8 @@
-let nombreArticulo = prompt("Ingrese el nombre de su articulo:");
-let precioArticulo = parseInt(prompt("Ingrese el precio de su articulo:"));
-let cantidadArticulo = parseInt(prompt("Ingrese cuantos articulos llevara:"));
+let ladoCuadrado = parseInt(prompt("Ingrese el valor del lado de un cuadrado"));
+let baseRectangulo = parseInt(prompt("Ingrese la base de un rectangulo: "));
+let alturaRectangulo = parseInt(prompt("Ingrese la altura del rectangulo: "));
 
-let total = (precioArticulo * cantidadArticulo)
+let perimetro = (ladoCuadrado * 4);
+let area = (baseRectangulo * alturaRectangulo);
 
-alert(`Su compra por ${cantidadArticulo} ${nombreArticulo} es de un total de ${total}.`)
+alert(`El perimetro del cuadrado es ${perimetro} y el area del rectangulo es ${area}`)
