@@ -1,5 +1,6 @@
 let nuevoEstudiante;
-
+let baseDatos = [];
+datosEstudiantes();
 function datosEstudiantes(){
     function estudiante(nombre,sexo,nota){
         this.nombre=nombre;
@@ -15,8 +16,6 @@ function datosEstudiantes(){
 
     añadir();
 }
-
-let baseDatos = [];
 
 function añadir(){
     baseDatos.push(nuevoEstudiante);
