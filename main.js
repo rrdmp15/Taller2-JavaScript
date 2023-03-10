@@ -1,8 +1,51 @@
-let ladoCuadrado = parseInt(prompt("Ingrese el valor del lado de un cuadrado"));
-let baseRectangulo = parseInt(prompt("Ingrese la base de un rectangulo: "));
-let alturaRectangulo = parseInt(prompt("Ingrese la altura del rectangulo: "));
+let nuevoAtleta;
+let baseDatos = [];
+let saltos = [];
+let nombres = [];
+let ganador = Math.max(...saltos)
 
-let perimetro = (ladoCuadrado * 4);
-let area = (baseRectangulo * alturaRectangulo);
 
-alert(`El perimetro del cuadrado es ${perimetro} y el area del rectangulo es ${area}`)
+do{
+    function atleta(nombre, salto){
+        this.nombre=nombre;
+        this.salto=salto;
+    }
+
+    let nombreEntrada = prompt("Ingrese su nombre: ");
+    let saltoEntrada = parseFloat(prompt("Ingrese su marca de salto en metros: "));
+
+    nuevoAtleta = new atleta(nombreEntrada, saltoEntrada);
+
+    añadir();
+
+} while(confirm("¿desea continuar?"));
+
+
+concadenarSalto();
+concadenarNombres();
+
+function añadir(){
+    baseDatos.push(nuevoAtleta);
+    console.log(baseDatos);
+}
+
+function concadenarSalto(){
+    for (let i of baseDatos){
+        saltos.unshift(i.salto);
+    }
+}
+
+function concadenarNombres(){
+    for (let i of baseDatos){
+        nombres.unshift(i.nombre);
+    }
+}
+let positionMax = saltos.indexOf(Math.max(...saltos));
+
+console.log(nombres)
+
+if (ganador > 15.50){
+    alert(`La campeona es ${nombres[positionMax]}, ha ganado una medalla de oro y rompio el record de 15.50 metros con ${saltos[positionMax]} metros. Por lo que recibe 500 millones como premio.`);
+} else{
+    alert(`La campeona es ${nombres[positionMax]} y ha ganado una medalla de oro.`);
+}
