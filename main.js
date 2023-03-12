@@ -1,51 +1,27 @@
-let nuevoAtleta;
-let baseDatos = [];
-let saltos = [];
-let nombres = [];
-let ganador = Math.max(...saltos)
-
+let datoNum = [];
+let numero;
 
 do{
-    function atleta(nombre, salto){
-        this.nombre=nombre;
-        this.salto=salto;
-    }
+numero = parseInt(prompt("Digita un numero: "));
 
-    let nombreEntrada = prompt("Ingrese su nombre: ");
-    let saltoEntrada = parseFloat(prompt("Ingrese su marca de salto en metros: "));
+añadir();
 
-    nuevoAtleta = new atleta(nombreEntrada, saltoEntrada);
-
-    añadir();
-
-} while(confirm("¿desea continuar?"));
-
-
-concadenarSalto();
-concadenarNombres();
+}while(numero != 0)
 
 function añadir(){
-    baseDatos.push(nuevoAtleta);
-    console.log(baseDatos);
+    datoNum.unshift(numero);
 }
 
-function concadenarSalto(){
-    for (let i of baseDatos){
-        saltos.unshift(i.salto);
-    }
-}
+let total=0;
 
-function concadenarNombres(){
-    for (let i of baseDatos){
-        nombres.unshift(i.nombre);
-    }
-}
-let positionMax = saltos.indexOf(Math.max(...saltos));
+for(let i of datoNum) total+=i;
 
-console.log(nombres)
+let valores = datoNum.length;
 
-if (ganador > 15.50){
-    alert(`La campeona es ${nombres[positionMax]}, ha ganado una medalla de oro y rompio el record de 15.50 metros con ${saltos[positionMax]} metros. Por lo que recibe 500 millones como premio.`);
-} else{
-    alert(`La campeona es ${nombres[positionMax]} y ha ganado una medalla de oro.`);
-}
+let promedio = (total / valores);
+
+let max = Math.max(...datoNum);
+
+let min = Math.min(...datoNum);
+
+alert(`La sumatoria de los valores ingresados es ${total}, el promedio es ${promedio}, la cantidad de valores ingresados es ${valores}, el numero mayor es ${max} y el menor ${min}.`);
